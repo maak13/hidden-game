@@ -1,0 +1,31 @@
+{
+  "name": "the-hidden-game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Hidden Game: programmatic documentary videos (Remotion + React + TypeScript)",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "lint": "tsc --noEmit",
+    "validate": "tsx scripts/validate.ts",
+    "render": "tsx scripts/render.ts",
+    "voice": "tsx scripts/generate-voice.ts"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.2.0",
+    "@remotion/cli": "4.0.505",
+    "@remotion/google-fonts": "4.0.505",
+    "@remotion/three": "4.0.505",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.505",
+    "three": "0.178.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "19.2.7",
+    "@types/three": "0.170.0",
+    "tsx": "^4.19.0",
+    "typescript": "5.9.3"
+  }
+}

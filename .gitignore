@@ -1,0 +1,9 @@
+node_modules/
+out/
+.DS_Store
+*.log
+# Heavy render output. Final exports are shared outside git.
+episodes/**/exports/*
+!episodes/**/exports/.gitkeep
+# Raw voice recordings stay local unless deliberately added to an episode branch
+*.wav
