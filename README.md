@@ -28,4 +28,4 @@ npm run render -- <compositionId> # render MP4 to out/
 Sample scenes: `SampleColdOpen`, `SampleSurfaceToSystem` (brand palette check).
 
 ## Brand
-Charcoal `#1C1D20`, warm cream `#F1E8D6`, muted gold `#C9A24B`, cool grey `#8A93A0` (see `src/config/brand.ts`). Fonts: Fraunces + Inter.
+Charcoal `#1C1D20`, warm cream `#F1E8D6`, muted gold `#C9A24B`, cool grey `#8A93A0` (see `src/config/brand.ts`). Fonts: Abril Fatface (titles) + Inter (subtitles). No eyebrow/kicker labels anywhere: on-screen words are a Title or a Subtitle only.

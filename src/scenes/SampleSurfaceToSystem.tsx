@@ -1,61 +1,50 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from "remotion";
 import { COLORS } from "../config/brand";
-import { Eyebrow } from "../components/typography/Eyebrow";
-import { Headline } from "../components/typography/Headline";
-import { FlowNode } from "../components/diagrams/FlowNode";
+import { Title } from "../components/typography/Title";
+import { Subtitle } from "../components/typography/Subtitle";
+import { GlassCard } from "../components/diagrams/GlassCard";
 
-// Sample scene B: "two-layer reveal" diagram (plan section 6, signature device 2).
-const NODES = [
-  { label: "Value signal", x: 280 },
-  { label: "Trust", x: 750 },
-  { label: "Repeat visits", x: 1220 },
-  { label: "Membership", x: 1690 },
+// Sample scene B: "two-layer reveal" with vertical glass cards (plan section 6, signature device 2).
+const STEPS = [
+  { label: "Value signal", x: 300 },
+  { label: "Trust", x: 740 },
+  { label: "Repeat visits", x: 1180 },
+  { label: "Membership", x: 1620 },
 ];
-const Y = 600;
+const Y = 690;
 
 export const SampleSurfaceToSystem: React.FC = () => {
   const frame = useCurrentFrame();
   const ease = Easing.bezier(0.22, 1, 0.36, 1);
   const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
-
   const titleOp = interpolate(frame, [0, 20], [0, 1], clamp);
-  const gridOp = interpolate(frame, [10, 40], [0, 0.5], clamp);
+  const subOp = interpolate(frame, [14, 36], [0, 1], clamp);
 
   return (
     <AbsoluteFill style={{ background: COLORS.charcoal }}>
+      {/* light behind the glass so the blur reads */}
       <AbsoluteFill
         style={{
-          opacity: gridOp,
-          backgroundImage: `linear-gradient(${COLORS.greyDark} 1px, transparent 1px), linear-gradient(90deg, ${COLORS.greyDark} 1px, transparent 1px)`,
-          backgroundSize: "80px 80px",
-          maskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black, transparent 80%)",
+          background: `radial-gradient(circle 420px at 300px 560px, rgba(201,162,75,0.35), transparent 70%), radial-gradient(circle 520px at 1250px 880px, rgba(138,147,160,0.30), transparent 70%), radial-gradient(circle 380px at 1650px 520px, rgba(201,162,75,0.30), transparent 70%)`,
         }}
       />
-      <div style={{ position: "absolute", top: 130, left: 160, opacity: titleOp }}>
-        <Eyebrow text="What the system sees" />
-        <div style={{ height: 22 }} />
-        <Headline text="A price is a promise." size={96} />
+      <div style={{ position: "absolute", top: 90, left: 140 }}>
+        <Title text="A price is a promise." size={128} opacity={titleOp} />
+        <div style={{ height: 18 }} />
+        <Subtitle text="What the system sees beneath the surface" opacity={subOp} />
       </div>
       <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
-        {NODES.slice(0, -1).map((n, i) => {
-          const start = 45 + i * 28;
-          const p = interpolate(frame, [start, start + 24], [0, 1], { ...clamp, easing: ease });
-          const x1 = n.x + 190;
-          const x2 = NODES[i + 1].x - 190;
-          return (
-            <g key={n.label}>
-              <line x1={x1} y1={Y} x2={x2} y2={Y} stroke={COLORS.gold} strokeWidth={3} strokeDasharray={x2 - x1} strokeDashoffset={(x2 - x1) * (1 - p)} />
-              <polygon points={`${x2},${Y} ${x2 - 16},${Y - 10} ${x2 - 16},${Y + 10}`} fill={COLORS.gold} opacity={p} />
-            </g>
-          );
+        {STEPS.slice(0, -1).map((s, i) => {
+          const p = interpolate(frame, [58 + i * 26, 80 + i * 26], [0, 1], { ...clamp, easing: ease });
+          const cx = (s.x + STEPS[i + 1].x) / 2;
+          return <polygon key={s.label} points={`${cx - 12},${Y - 22} ${cx + 16},${Y} ${cx - 12},${Y + 22}`} fill={COLORS.gold} opacity={p} />;
         })}
       </svg>
-      {NODES.map((n, i) => {
-        const start = 36 + i * 28;
-        const p = interpolate(frame, [start, start + 22], [0, 1], { ...clamp, easing: ease });
-        return <FlowNode key={n.label} label={n.label} x={n.x} y={Y + (1 - p) * 30} opacity={p} scale={0.92 + 0.08 * p} highlight={i === NODES.length - 1} />;
+      {STEPS.map((s, i) => {
+        const start = 36 + i * 26;
+        const p = interpolate(frame, [start, start + 24], [0, 1], { ...clamp, easing: ease });
+        return <GlassCard key={s.label} label={s.label} index={i + 1} x={s.x} y={Y + (1 - p) * 40} opacity={p} scale={0.94 + 0.06 * p} highlight={i === STEPS.length - 1} />;
       })}
     </AbsoluteFill>
   );

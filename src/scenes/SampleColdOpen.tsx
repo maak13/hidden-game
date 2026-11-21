@@ -1,8 +1,8 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig, Easing } from "remotion";
 import { COLORS } from "../config/brand";
-import { serif } from "../config/fonts";
-import { Eyebrow } from "../components/typography/Eyebrow";
+import { display } from "../config/fonts";
+import { Subtitle } from "../components/typography/Subtitle";
 import { HotDog } from "../components/diagrams/HotDog";
 
 // Sample scene A: "object cold open" (plan section 6, signature device 1).
@@ -79,10 +79,10 @@ export const SampleColdOpen: React.FC = () => {
           transform: `translateY(${priceY}px)`,
         }}
       >
-        <div style={{ fontFamily: serif, fontSize: 210, color: COLORS.cream, letterSpacing: -4 }}>$1.50</div>
+        <div style={{ fontFamily: display, fontSize: 230, color: COLORS.cream, letterSpacing: -3 }}>$1.50</div>
       </div>
       <div style={{ position: "absolute", bottom: 90, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-        <Eyebrow text="The visible story is rarely the whole story" opacity={eyeOp} />
+        <Subtitle text="The visible story is rarely the whole story." size={44} color={COLORS.cream} opacity={eyeOp * 0.85} align="center" />
       </div>
     </AbsoluteFill>
   );
