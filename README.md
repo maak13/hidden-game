@@ -23,7 +23,8 @@ npm install
 npm run dev                       # Remotion Studio
 npm run validate                  # check episode folders
 npm run voice -- episode-001      # voiceover duration -> frames
-npm run render -- <compositionId> # render MP4 to out/
+npm run render -- <compositionId> # render MP4 + loudness-mastered copy to out/
+npm run sound                     # regenerate the synthesized music bed and sound effects
 ```
 Sample scenes: `SampleColdOpen`, `SampleSurfaceToSystem` (brand palette check).
 
