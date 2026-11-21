@@ -1,0 +1,151 @@
+{
+  "episode": "episode-001",
+  "topic": "Why a $9.99 price feels different from $10",
+  "aspect": "16:9",
+  "fps": 30,
+  "timingNote": "Estimated at ~140 wpm. Replace start/end with real voiceover timings via `npm run voice`.",
+  "scenes": [
+    {
+      "id": "s1",
+      "name": "Cold open",
+      "startSec": 0,
+      "endSec": 12,
+      "narration": "Two price tags. One says nine ninety-nine. The other says ten dollars. The difference is one cent. So why do they feel so far apart?",
+      "visual": "Close-up on steel counter; $9.99 tag and $10 tag land side by side; slow pull back.",
+      "components": [
+        "Title"
+      ],
+      "onScreen": {
+        "title": "$9.99 / $10",
+        "subtitle": null
+      },
+      "sources": [],
+      "sound": "Room tone, counter taps, pad from 0:10"
+    },
+    {
+      "id": "s2",
+      "name": "Stakes",
+      "startSec": 12,
+      "endSec": 31,
+      "narration": "Walk through any store and the nine is everywhere. In the data behind one economics study of a US retailer, roughly a quarter to a third of all prices ended in ninety-nine cents. That isn't habit. It's a bet on how your mind reads a number.",
+      "visual": "Grid of price tags; .99 tags light gold until about a third lit; one tag moves to centre.",
+      "components": [
+        "Subtitle",
+        "PriceTag"
+      ],
+      "onScreen": {
+        "title": null,
+        "subtitle": "About 25 to 33% of prices in one retail dataset ended in .99"
+      },
+      "sources": [
+        "S4"
+      ],
+      "sound": "Sparse ticks"
+    },
+    {
+      "id": "s3",
+      "name": "Mechanism: left-digit effect",
+      "startSec": 31,
+      "endSec": 56,
+      "narration": "Here's the mechanism. We read prices left to right, and the first digit does most of the work. Researchers call it the left-digit effect. In 2005, Manoj Thomas and Vicki Morwitz found that two ninety-nine registers as closer to two dollars than to three. And it only kicks in when that first digit changes.",
+      "visual": "$2.99 tag; leading 2 lifts out in gold; number line $2 to $3 with marker nearer $2; three tall glass cards (First digit, Read as lower, Feels cheaper); $3.29 vs $3.30 same-first-digit note.",
+      "components": [
+        "Title",
+        "Subtitle",
+        "GlassCard",
+        "NumberLine"
+      ],
+      "onScreen": {
+        "title": "The left-digit effect",
+        "subtitle": "Thomas & Morwitz, Journal of Consumer Research, 2005"
+      },
+      "sources": [
+        "S1"
+      ],
+      "sound": "Rising tone resolving on card landing"
+    },
+    {
+      "id": "s4",
+      "name": "Evidence: used cars",
+      "startSec": 56,
+      "endSec": 82,
+      "narration": "It shows up where real money is on the line. In more than twenty-two million used-car sales, prices dropped at every ten-thousand-mile mark. A car just under eighty thousand miles sold for about two hundred ten dollars more than one just over. But only ten dollars less than a car with a hundred fewer miles. One digit mattered more than the wear.",
+      "visual": "Odometer rolls 79,800 to 80,000; three vertical glass price bars by mileage band; gold $210 bracket between bars 2 and 3, grey $10 bracket between 1 and 2.",
+      "components": [
+        "Title",
+        "Subtitle",
+        "GlassBar",
+        "Odometer"
+      ],
+      "onScreen": {
+        "title": "$210 vs $10",
+        "subtitle": "22 million used-car sales. Lacetera, Pope & Sydnor (NBER working paper)"
+      },
+      "sources": [
+        "S3"
+      ],
+      "sound": "Odometer click-roll"
+    },
+    {
+      "id": "s5",
+      "name": "Twist: stores underprice the effect",
+      "startSec": 82,
+      "endSec": 102,
+      "narration": "Retail tells the same story. In field experiments, nine endings raised demand every time, especially for new items. And across seventeen hundred products, shoppers reacted as if that one cent were worth fifteen to twenty-five. Stores priced as if it were worth two or three.",
+      "visual": "Two tall glass columns: gold to 15-25 cents (shoppers), grey to about 2-3 cents (stores); 1 cent marker at base.",
+      "components": [
+        "Title",
+        "Subtitle",
+        "GlassBar"
+      ],
+      "onScreen": {
+        "title": "1 cent",
+        "subtitle": "Strulov-Shlain, Review of Economic Studies, 2023 (1,710 products)"
+      },
+      "sources": [
+        "S2",
+        "S4"
+      ],
+      "sound": "Low swell"
+    },
+    {
+      "id": "s6",
+      "name": "The legend",
+      "startSec": 102,
+      "endSec": 111,
+      "narration": "You may have heard it started so cashiers had to open the register. It's a popular story. It's also just a legend.",
+      "visual": "Flat cash register drawing opens; LEGEND stamp lands; drawing desaturates.",
+      "components": [
+        "Title",
+        "Subtitle"
+      ],
+      "onScreen": {
+        "title": "Legend",
+        "subtitle": "Often repeated, not documented"
+      },
+      "sources": [
+        "S5"
+      ],
+      "sound": "Drawer ka-ching then silence"
+    },
+    {
+      "id": "s7",
+      "name": "Reveal and return shot",
+      "startSec": 111,
+      "endSec": 127,
+      "narration": "So next time you see nine ninety-nine, remember: the cent isn't saving you much. It's changing the digit your brain reads first. The price tag hasn't changed. The way you read it has.",
+      "visual": "Return to opening counter and $9.99 tag; push in on gold 9; fade to charcoal; end card.",
+      "components": [
+        "Title"
+      ],
+      "onScreen": {
+        "title": "The price tag hasn't changed. The way you read it has.",
+        "subtitle": null
+      },
+      "sources": [
+        "S1"
+      ],
+      "sound": "Pad resolves; one counter tap"
+    }
+  ]
+}
