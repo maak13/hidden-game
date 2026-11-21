@@ -9,7 +9,8 @@
     "lint": "tsc --noEmit",
     "validate": "tsx scripts/validate.ts",
     "render": "tsx scripts/render.ts",
-    "voice": "tsx scripts/generate-voice.ts"
+    "voice": "tsx scripts/generate-voice.ts",
+    "sound": "tsx scripts/generate-sound.ts"
   },
   "dependencies": {
     "@react-three/fiber": "9.2.0",

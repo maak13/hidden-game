@@ -1,11 +1,12 @@
 import React from "react";
 import { COLORS } from "../../config/brand";
-import { display } from "../../config/fonts";
+import { display, sans } from "../../config/fonts";
 
 // Tall vertical glassmorphism card used for flow steps. Needs something colourful behind it to blur.
 export const GlassCard: React.FC<{
   label: string;
-  index?: number;
+  index?: number | string;
+  caption?: string;
   x: number;
   y: number;
   width?: number;
@@ -13,7 +14,10 @@ export const GlassCard: React.FC<{
   opacity?: number;
   scale?: number;
   highlight?: boolean;
-}> = ({ label, index, x, y, width = 340, height = 540, opacity = 1, scale = 1, highlight = false }) => (
+  labelSize?: number;
+  indexSize?: number;
+  children?: React.ReactNode;
+}> = ({ label, index, caption, x, y, width = 340, height = 540, opacity = 1, scale = 1, highlight = false, labelSize = 46, indexSize = 150, children }) => (
   <div
     style={{
       position: "absolute",
@@ -25,7 +29,7 @@ export const GlassCard: React.FC<{
       opacity,
       borderRadius: 36,
       boxSizing: "border-box",
-      padding: 36,
+      padding: 32,
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
@@ -38,9 +42,11 @@ export const GlassCard: React.FC<{
       boxShadow: "0 30px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.22)",
     }}
   >
-    <div style={{ fontFamily: display, fontSize: 150, lineHeight: 1, color: highlight ? COLORS.gold : "rgba(241,232,214,0.28)" }}>
-      {index ?? ""}
+    <div style={{ fontFamily: display, fontSize: indexSize, lineHeight: 1, color: highlight ? COLORS.gold : "rgba(241,232,214,0.28)" }}>{index ?? ""}</div>
+    {children && <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>{children}</div>}
+    <div>
+      <div style={{ fontFamily: display, fontSize: labelSize, lineHeight: 1.08, color: highlight ? COLORS.gold : COLORS.cream }}>{label}</div>
+      {caption && <div style={{ fontFamily: sans, fontWeight: 500, fontSize: 26, lineHeight: 1.25, color: COLORS.grey, marginTop: 10 }}>{caption}</div>}
     </div>
-    <div style={{ fontFamily: display, fontSize: 46, lineHeight: 1.08, color: highlight ? COLORS.gold : COLORS.cream }}>{label}</div>
   </div>
 );
