@@ -22,3 +22,8 @@ export const CounterSurface: React.FC = () => (
     <div style={{ position: "absolute", left: -200, right: -200, top: COUNTER_Y + 6, height: 2, background: "rgba(255,255,255,0.35)" }} />
   </AbsoluteFill>
 );
+
+/** Front face of the counter, drawn over people standing behind it. */
+export const CounterFront: React.FC = () => (
+  <div style={{ position: "absolute", left: -200, right: -200, top: COUNTER_Y, bottom: -200, background: `linear-gradient(180deg, #6C737D 0%, ${COLORS.greyDark} 16%, ${COLORS.charcoal} 100%)`, borderTop: `2px solid ${COLORS.grey}` }} />
+);
