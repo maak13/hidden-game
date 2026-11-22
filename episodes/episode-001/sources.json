@@ -59,6 +59,26 @@
       "type": "secondary, news/radio",
       "confidence": "disputed",
       "caveats": "Presented as legend only. 1875 and 1880 origin claims are unverified and not used."
+    },
+    {
+      "id": "S6",
+      "claim": "Consumers judge the difference between $4.00 and $2.99 as larger than between $4.01 and $3.00, though the numeric differences are identical (left-digit bias); stronger when prices are seen side by side",
+      "source": "Sokolova, T., Seenivasan, S. & Thomas, M. (2020) The Left-Digit Bias: When and Why Are Consumers Penny Wise and Pound Foolish? Journal of Marketing Research 57(4)",
+      "urls": [
+        "https://doi.org/10.1177/0022243720932532"
+      ],
+      "type": "primary (open-access abstract, shown on screen as a screenshot)",
+      "confidence": "high",
+      "caveats": "Used on screen while the voiceover names the left-digit effect; the screenshot highlights the abstract's own wording."
+    },
+    {
+      "id": "S7",
+      "claim": "On-screen imagery: US $100 note photo, journal screenshots, generic cars and shoppers",
+      "source": "Screenshots supplied by the channel owner; $100 note photo supplied by the channel owner (check its licence before publishing); cars, shoppers, shelves and storefront are original flat illustrations with no real brand marks",
+      "urls": [],
+      "type": "asset note",
+      "confidence": "n/a",
+      "caveats": "Field-experiment and cashier scenes are illustrations of the cited findings, captioned as such."
     }
   ]
 }
