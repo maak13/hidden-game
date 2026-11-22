@@ -1,0 +1,84 @@
+{
+  "episode": "episode-001",
+  "ledger": [
+    {
+      "id": "S1",
+      "claim": "Left-digit effect: $2.99 is perceived as closer to $2 than $3; nine-ending effect appears when the leftmost digit changes",
+      "source": "Thomas, M. & Morwitz, V. (2005) Penny Wise and Pound Foolish: The Left-Digit Effect in Price Cognition. Journal of Consumer Research 32(1), 54-64",
+      "urls": [
+        "https://econpapers.repec.org/RePEc:oup:jconrs:v:32:y:2005:i:1:p:54-64",
+        "https://w4.stern.nyu.edu/sternbusiness/fall_2005/pennySaved.html"
+      ],
+      "type": "primary (journal) + secondary summary read",
+      "confidence": "high",
+      "caveats": "Experiments used student participants and pens; summary page gives no percentage effect sizes. $3.29 vs $3.30 in script is our illustration."
+    },
+    {
+      "id": "S2",
+      "claim": "$9 price endings increased demand in all three field experiments, more for new items than items sold in earlier years; may work better with limited information",
+      "source": "Anderson, E. & Simester, D. (2003) Effects of $9 Price Endings on Retail Sales: Evidence from Field Experiments. Quantitative Marketing and Economics 1(1), 93-110",
+      "urls": [
+        "https://www.kellogg.northwestern.edu/academics-research/research/detail/2003/effects-of-9-price-endings-on-retail-sales-evidence/"
+      ],
+      "type": "primary abstract via university page",
+      "confidence": "high for demand result; medium for mechanism",
+      "caveats": "Abstract gives no percentage lift. Do not use the $34 to $39 example."
+    },
+    {
+      "id": "S3",
+      "claim": "Used-car prices drop at each 10,000-mile threshold ($150 to $200); cars at 79,900-79,999 miles sold ~$210 above 80,000-80,100 but only $10 below 79,800-79,899; >22 million wholesale transactions",
+      "source": "Lacetera, N., Pope, D. & Sydnor, J. Heuristic Thinking and Limited Attention in the Car Market. NBER Working Paper 17030 (digest: NBER Digest, Sept 2011)",
+      "urls": [
+        "https://www.nber.org/digest/sep11/limited-attention-car-market",
+        "https://www.nber.org/papers/w17030"
+      ],
+      "type": "working paper digest",
+      "confidence": "high for pattern",
+      "caveats": "Check whether a later journal version changes figures. Authors attribute inattention mainly to final buyers."
+    },
+    {
+      "id": "S4",
+      "claim": "Shoppers behaved as if a 1 cent gap were 15-25 cents; firms priced as if 1.5-3 cents; 1,710 products in 248 stores; one-quarter to one-third of prices ended in 99 cents",
+      "source": "Strulov-Shlain, A. (2023) More than a Penny's Worth: Left-Digit Bias and Firm Pricing. Review of Economic Studies 90(5), 2612-2645 (figures read from Chicago Booth Review, 18 Feb 2020, on the 2019 working paper)",
+      "urls": [
+        "https://www.chicagobooth.edu/review/retailers-underestimate-power-penny-pricing",
+        "https://www.restud.com/more-than-a-pennys-worth-left-digit-bias-and-firm-pricing/"
+      ],
+      "type": "secondary summary of working paper; published version exists",
+      "confidence": "medium to high",
+      "caveats": "VERIFY all numbers against the published Review of Economic Studies paper before final render. Data come from one US retailer and a set of chains."
+    },
+    {
+      "id": "S5",
+      "claim": "Cash-register origin of 99 endings is a legend; no documentation found",
+      "source": "Fordham news story on R. Schindler keynote (call it legend); CBC Under the Influence (unsourced)",
+      "urls": [
+        "https://now.fordham.edu/?p=14923",
+        "https://www.cbc.ca/radio/undertheinfluence/the-real-reason-most-prices-end-in-99-cents-1.4731238"
+      ],
+      "type": "secondary, news/radio",
+      "confidence": "disputed",
+      "caveats": "Presented as legend only. 1875 and 1880 origin claims are unverified and not used."
+    },
+    {
+      "id": "S6",
+      "claim": "Consumers judge the difference between $4.00 and $2.99 as larger than between $4.01 and $3.00, though the numeric differences are identical (left-digit bias); stronger when prices are seen side by side",
+      "source": "Sokolova, T., Seenivasan, S. & Thomas, M. (2020) The Left-Digit Bias: When and Why Are Consumers Penny Wise and Pound Foolish? Journal of Marketing Research 57(4)",
+      "urls": [
+        "https://doi.org/10.1177/0022243720932532"
+      ],
+      "type": "primary (open-access abstract, shown on screen as a screenshot)",
+      "confidence": "high",
+      "caveats": "Used on screen while the voiceover names the left-digit effect; the screenshot highlights the abstract's own wording."
+    },
+    {
+      "id": "S7",
+      "claim": "On-screen imagery: US $100 note photo, journal screenshots, generic cars and shoppers",
+      "source": "Screenshots supplied by the channel owner; $100 note photo supplied by the channel owner (check its licence before publishing); cars, shoppers, shelves and storefront are original flat illustrations with no real brand marks",
+      "urls": [],
+      "type": "asset note",
+      "confidence": "n/a",
+      "caveats": "Field-experiment and cashier scenes are illustrations of the cited findings, captioned as such."
+    }
+  ]
+}
