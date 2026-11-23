@@ -1,0 +1,8 @@
+{
+  "episode": "episode-002",
+  "ledger": [
+    {"id": "S1", "claim": "Students' own SS number digits shifted their bids for the same goods; keyboard about $56 (top quintile) vs about $16 (bottom quintile); 55 MIT Sloan students", "source": "Ariely, D., Loewenstein, G. & Prelec, D. (2003) Coherent Arbitrariness: Stable Demand Curves Without Stable Preferences. Quarterly Journal of Economics 118(1)", "urls": ["https://www.cmu.edu/dietrich/sds/docs/loewenstein/CoherentArbit.pdf"], "type": "primary (paper text read)", "confidence": "high", "caveats": "Effect size varies in later replications; say 'in one experiment'."},
+    {"id": "S2", "claim": "Anchoring and insufficient adjustment", "source": "Tversky, A. & Kahneman, D. (1974) Judgment under Uncertainty: Heuristics and Biases. Science 185", "urls": [], "type": "primary (cited inside S1)", "confidence": "high for concept", "caveats": "Medians from the wheel-of-fortune study not used in the script."},
+    {"id": "S3", "claim": "Robustness of anchoring in WTP/WTA experiments is mixed", "source": "Fudenberg, Levine & Maniadis (2012) On the Robustness of Anchoring Effects in WTP and WTA Experiments", "urls": ["https://economics.mit.edu/research/publications/robustness-anchoring-effects-wtp-and-wta-experiments"], "type": "secondary (listing seen, not read in full)", "confidence": "medium", "caveats": "Read before quoting in any longer version."}
+  ]
+}
