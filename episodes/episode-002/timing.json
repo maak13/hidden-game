@@ -1,0 +1,176 @@
+{
+ "duration": 77.087,
+ "method": "ffmpeg silencedetect -35dB 0.25s; phrases mapped in script order",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 1.688,
+   "text": "Here's a strange experiment."
+  },
+  {
+   "start": 2.165,
+   "end": 7.436,
+   "text": "Students at MIT were asked to write down the last two digits of their social security number."
+  },
+  {
+   "start": 7.851,
+   "end": 8.859,
+   "text": "Just a random number."
+  },
+  {
+   "start": 9.71,
+   "end": 11.256,
+   "text": "Then they bid on things."
+  },
+  {
+   "start": 11.659,
+   "end": 12.272,
+   "text": "A keyboard."
+  },
+  {
+   "start": 12.606,
+   "end": 13.046,
+   "text": "Wine."
+  },
+  {
+   "start": 13.359,
+   "end": 13.829,
+   "text": "Chocolate."
+  },
+  {
+   "start": 14.429,
+   "end": 17.708,
+   "text": "And that random number changed what they were willing to pay."
+  },
+  {
+   "start": 18.325,
+   "end": 22.503,
+   "text": "The students with the highest numbers offered about fifty-six dollars for the keyboard."
+  },
+  {
+   "start": 23.028,
+   "end": 24.21,
+   "text": "The students with the lowest?"
+  },
+  {
+   "start": 24.607,
+   "end": 25.593,
+   "text": "About sixteen."
+  },
+  {
+   "start": 26.19,
+   "end": 27.501,
+   "text": "For the same keyboard."
+  },
+  {
+   "start": 28.158,
+   "end": 30.048,
+   "text": "Psychologists call it anchoring."
+  },
+  {
+   "start": 30.497,
+   "end": 32.972,
+   "text": "The first number you see becomes a starting point,"
+  },
+  {
+   "start": 33.285,
+   "end": 36.151,
+   "text": "and every judgment after it is adjusted from there."
+  },
+  {
+   "start": 36.685,
+   "end": 37.935,
+   "text": "Usually not enough."
+  },
+  {
+   "start": 38.534,
+   "end": 39.965,
+   "text": "Now think about a store."
+  },
+  {
+   "start": 40.374,
+   "end": 42.898,
+   "text": "A three-hundred-dollar jacket hangs by the door."
+  },
+  {
+   "start": 43.398,
+   "end": 46.474,
+   "text": "The hundred-and-twenty-dollar one beside it"
+  },
+  {
+   "start": 46.751,
+   "end": 47.319,
+   "text": "suddenly feels..."
+  },
+  {
+   "start": 47.895,
+   "end": 48.635,
+   "text": "reasonable."
+  },
+  {
+   "start": 48.934,
+   "end": 51.041,
+   "text": "A tag says \"was two hundred, now one-twenty.\""
+  },
+  {
+   "start": 51.614,
+   "end": 54.411,
+   "text": "That crossed-out price isn't information."
+  },
+  {
+   "start": 54.832,
+   "end": 55.682,
+   "text": "It's an anchor."
+  },
+  {
+   "start": 56.247,
+   "end": 57.786,
+   "text": "And here's the unsettling part."
+  },
+  {
+   "start": 58.237,
+   "end": 59.237,
+   "text": "In that experiment,"
+  },
+  {
+   "start": 59.508,
+   "end": 61.407,
+   "text": "the anchor was completely random."
+  },
+  {
+   "start": 61.807,
+   "end": 62.596,
+   "text": "It meant nothing."
+  },
+  {
+   "start": 63.232,
+   "end": 64.346,
+   "text": "It still worked."
+  },
+  {
+   "start": 64.955,
+   "end": 67.786,
+   "text": "So next time the first number you see feels fair,"
+  },
+  {
+   "start": 68.117,
+   "end": 69.276,
+   "text": "ask one question:"
+  },
+  {
+   "start": 69.841,
+   "end": 71.3,
+   "text": "where did that number come from?"
+  },
+  {
+   "start": 71.872,
+   "end": 74.367,
+   "text": "Because the first number isn't always the right one."
+  },
+  {
+   "start": 74.834,
+   "end": 77.087,
+   "text": "It's just the one that got there first."
+  }
+ ]
+}
