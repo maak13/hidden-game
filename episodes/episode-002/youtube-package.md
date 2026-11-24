@@ -17,5 +17,5 @@ Subscribe to AhadInsights for more of the hidden systems behind money, prices an
 ## Hashtags
 #anchoring, #psychology, #pricing, #behavioraleconomics, #Shorts
 
-## Tags (25 tags, 552 characters, YouTube's limit is 500)
-anchoring bias, anchoring effect, anchoring effect psychology, cognitive bias, cognitive biases explained, behavioral economics, behavioural economics, pricing psychology, psychology of pricing, price psychology, how prices trick your brain, was now price trick, why sale prices work, first number anchor, anchor pricing, social security number experiment, coherent arbitrariness, consumer psychology, marketing psychology, how retailers manipulate prices, psychology facts, money psychology, mind tricks, behavioral economics shorts, psychology shorts
+## Tags (25 tags, 484 characters, YouTube's limit is 500)
+anchoring bias, anchoring effect, cognitive bias, behavioral economics, pricing psychology, price psychology, psychology of pricing, anchor pricing, first number anchor, how prices trick you, was now price trick, why sales work, consumer psychology, marketing psychology, psychology facts, money psychology, mind tricks, coherent arbitrariness, social security experiment, behavioural economics, cognitive biases, retail psychology, price anchoring, psychology shorts, decision making
