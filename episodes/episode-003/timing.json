@@ -1,0 +1,186 @@
+{
+ "duration": 77.871,
+ "method": "ffmpeg silencedetect -35dB 0.25s; phrases mapped in script order",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 1.29,
+   "text": "Here's a coffee mug."
+  },
+  {
+   "start": 1.65,
+   "end": 3.03,
+   "text": "Worth about three dollars."
+  },
+  {
+   "start": 3.52,
+   "end": 4.81,
+   "text": "Now I hand it to you."
+  },
+  {
+   "start": 5.25,
+   "end": 5.91,
+   "text": "Same mug."
+  },
+  {
+   "start": 6.5,
+   "end": 7.89,
+   "text": "Suddenly it's worth more."
+  },
+  {
+   "start": 8.51,
+   "end": 9.51,
+   "text": "That's not a trick."
+  },
+  {
+   "start": 9.96,
+   "end": 10.95,
+   "text": "It's an experiment."
+  },
+  {
+   "start": 11.71,
+   "end": 16.22,
+   "text": "In 1990, economists gave coffee mugs to half the students in a room."
+  },
+  {
+   "start": 16.68,
+   "end": 18.37,
+   "text": "Then they let everyone trade."
+  },
+  {
+   "start": 18.93,
+   "end": 19.81,
+   "text": "Owners were asked:"
+  },
+  {
+   "start": 20.16,
+   "end": 22.1,
+   "text": "what's the lowest price you'd sell for?"
+  },
+  {
+   "start": 22.64,
+   "end": 23.54,
+   "text": "Buyers were asked:"
+  },
+  {
+   "start": 23.92,
+   "end": 25.14,
+   "text": "what's the most you'd pay?"
+  },
+  {
+   "start": 25.87,
+   "end": 28.01,
+   "text": "Owners wanted more than twice as much."
+  },
+  {
+   "start": 28.49,
+   "end": 31.58,
+   "text": "In one run, the median owner asked seven dollars."
+  },
+  {
+   "start": 32.01,
+   "end": 34.2,
+   "text": "The median buyer offered under three."
+  },
+  {
+   "start": 34.78,
+   "end": 35.44,
+   "text": "Same mug."
+  },
+  {
+   "start": 35.71,
+   "end": 36.43,
+   "text": "Same room."
+  },
+  {
+   "start": 36.89,
+   "end": 38.93,
+   "text": "The only difference was who was holding it."
+  },
+  {
+   "start": 39.46,
+   "end": 41.06,
+   "text": "And that kills the trade."
+  },
+  {
+   "start": 41.61,
+   "end": 43.33,
+   "text": "If mugs were handed out at random,"
+  },
+  {
+   "start": 43.59,
+   "end": 45.69,
+   "text": "about half should have changed hands."
+  },
+  {
+   "start": 46.17,
+   "end": 46.68,
+   "text": "Instead,"
+  },
+  {
+   "start": 46.94,
+   "end": 48.07,
+   "text": "only a handful did."
+  },
+  {
+   "start": 48.58,
+   "end": 49.62,
+   "text": "In one early session,"
+  },
+  {
+   "start": 49.89,
+   "end": 50.79,
+   "text": "one in five."
+  },
+  {
+   "start": 51.31,
+   "end": 52.65,
+   "text": "Nobody was being greedy."
+  },
+  {
+   "start": 53.19,
+   "end": 54.77,
+   "text": "Owning it changed the price."
+  },
+  {
+   "start": 55.4,
+   "end": 57.84,
+   "text": "Psychologists call it the endowment effect."
+  },
+  {
+   "start": 58.37,
+   "end": 59.83,
+   "text": "The moment something is yours,"
+  },
+  {
+   "start": 60.12,
+   "end": 61.81,
+   "text": "giving it up feels like a loss,"
+  },
+  {
+   "start": 62.17,
+   "end": 64.14,
+   "text": "and losses weigh more than gains."
+  },
+  {
+   "start": 64.66,
+   "end": 66.26,
+   "text": "That's why free trials work."
+  },
+  {
+   "start": 66.67,
+   "end": 68.88,
+   "text": "That's why you keep the jacket you never wear."
+  },
+  {
+   "start": 69.59,
+   "end": 70.34,
+   "text": "Ask yourself:"
+  },
+  {
+   "start": 70.78,
+   "end": 73.23,
+   "text": "would you buy it today, at the price you're asking?"
+  }
+ ]
+}
