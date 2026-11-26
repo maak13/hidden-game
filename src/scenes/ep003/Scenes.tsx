@@ -20,21 +20,28 @@ import closetMessy from "../../../episodes/episode-003/assets/closet-messy.jpeg"
 import LOGO from "../../../episodes/episode-003/assets/channel-logo.png";
 
 // Vertical 1080 x 1920. Title block top (right padding leaves room for the corner logo), content 380 to 1340, captions 1390.
+const FX = ["up", "left", "zoom"] as const;
 const Head: React.FC<{ title: string; sub?: string; from: number; to?: number; color?: string; size?: number }> = ({ title, sub, from, to = 999, color, size = 100 }) => {
   const T = useT();
   const o = ramp(T, from, from + 0.5) * ramp(T, to - 0.3, to, 1, 0);
+  const fx = FX[Math.floor(from) % 3];
+  const k = 1 - o;
+  const tf = fx === "up" ? `translateY(${k * 30}px)` : fx === "left" ? `translateX(${k * -90}px)` : `scale(${1 - k * 0.18})`;
   return (
-    <div style={{ position: "absolute", left: 70, right: 170, top: 110, opacity: o, transform: `translateY(${(1 - o) * 24}px)` }}>
+    <div style={{ position: "absolute", left: 70, right: 70, top: 380, height: 230, display: "flex", flexDirection: "column", justifyContent: "flex-end", opacity: o, transform: tf, transformOrigin: "0 100%" }}>
       <Title text={title} size={size} color={color} />
       {sub && <div style={{ marginTop: 14 }}><Subtitle text={sub} size={36} /></div>}
     </div>
   );
 };
 
+// Body region is 650 to 1390 (centre 1020); title sits right above it, captions right below at 1430.
+const BT = 650, BH = 740, BC = 1020;
+
 // Portrait photo, centred, sized by height.
-const Pic: React.FC<{ src: string; aspect: number; h: number; top: number; t: number; opacity: number; hl?: Hl[]; focus?: { x: number; y: number; w: number; h: number }; zoomAt?: [number, number] }> = ({ src, aspect, h, top, t, opacity, hl, focus, zoomAt }) => {
+const Pic: React.FC<{ src: string; aspect: number; h?: number; t: number; opacity: number; hl?: Hl[]; focus?: { x: number; y: number; w: number; h: number }; zoomAt?: [number, number] }> = ({ src, aspect, h = BH, t, opacity, hl, focus, zoomAt }) => {
   const w = Math.min(960, h * aspect);
-  return <PhotoPanel src={src} aspect={aspect} left={(1080 - w) / 2} top={top} width={w} height={h} t={t} opacity={opacity} highlights={hl} focus={focus} zoomAt={zoomAt} />;
+  return <PhotoPanel src={src} aspect={aspect} left={(1080 - w) / 2} top={BC - h / 2} width={w} height={h} t={t} opacity={opacity} highlights={hl} focus={focus} zoomAt={zoomAt} />;
 };
 
 const Tag: React.FC<{ value: string; left: number; top: number; p: number; w?: number }> = ({ value, left, top, p, w = 270 }) => (
@@ -54,9 +61,9 @@ export const S1: React.FC = () => {
       <Head title="A $3 mug" from={0.1} to={3.4} />
       <Head title="Now it's yours." from={3.5} to={6.4} />
       <Head title="Worth more?" from={6.5} color={COLORS.gold} size={112} />
-      <Pic src={mug} aspect={736 / 920} h={900} top={400} t={T} opacity={a} />
-      <Pic src={mugHand} aspect={736 / 966} h={900} top={400} t={T} opacity={b} />
-      {T < 6.5 ? <Tag value="$3" left={650} top={1180} p={tag} /> : <Tag value="$7" left={650} top={1180} p={seven} />}
+      <Pic src={mug} aspect={736 / 920} t={T} opacity={a} />
+      <Pic src={mugHand} aspect={736 / 966} t={T} opacity={b} />
+      {T < 6.5 ? <Tag value="$3" left={640} top={1190} p={tag} /> : <Tag value="$7" left={640} top={1190} p={seven} />}
     </AbsoluteFill>
   );
 };
@@ -69,7 +76,7 @@ export const S2: React.FC = () => {
       <Backdrop />
       <Head title="Not a trick." from={8.4} to={10.0} />
       <Head title="An experiment." from={10.05} color={COLORS.gold} />
-      <Pic src={lab} aspect={736 / 1177} h={900} top={400} t={T} opacity={ramp(T, 8.5, 9.0)} />
+      <Pic src={lab} aspect={736 / 1177} t={T} opacity={ramp(T, 8.5, 9.0)} />
     </AbsoluteFill>
   );
 };
@@ -84,11 +91,11 @@ export const S3: React.FC = () => {
       <Backdrop />
       <Head title="1990" sub="Kahneman, Knetsch & Thaler" from={11.7} to={16.5} />
       <Head title="Then, a market" from={16.7} color={COLORS.gold} />
-      <PhotoPanel src={abstract} aspect={1391 / 1502} left={60} top={470} width={960} height={600} t={T} opacity={p} focus={{ x: 0.12, y: 0.77, w: 0.76, h: 0.18 }} zoomAt={[12.0, 13.0]} highlights={[
+      <PhotoPanel src={abstract} aspect={1391 / 1502} left={60} top={BT} width={960} height={BH} t={T} opacity={p} focus={{ x: 0.12, y: 0.72, w: 0.76, h: 0.26 }} zoomAt={[12.0, 13.0]} highlights={[
         { x: 0.15, y: 0.785, w: 0.7, h: 0.024, at: 13.2, dur: 0.8 },
         { x: 0.15, y: 0.808, w: 0.3, h: 0.024, at: 14.5, dur: 0.6 },
       ]} />
-      <Pic src={labStudents} aspect={736 / 985} h={900} top={400} t={T} opacity={s} />
+      <Pic src={labStudents} aspect={736 / 985} t={T} opacity={s} />
     </AbsoluteFill>
   );
 };
@@ -102,8 +109,8 @@ export const S4: React.FC = () => {
     <AbsoluteFill>
       <Backdrop />
       <Head title="Owners and buyers" from={18.7} />
-      <GlassCard label="Owners sell for" index="$?" x={300} y={870 + (1 - a) * 50} width={440} height={640} indexSize={190} labelSize={44} opacity={a} highlight />
-      <GlassCard label="Buyers pay" index="$?" x={780} y={870 + (1 - b) * 50} width={440} height={640} indexSize={190} labelSize={44} opacity={b} />
+      <GlassCard label="Owners sell for" index="$?" x={300} y={1020 + (1 - a) * 50} width={440} height={700} indexSize={190} labelSize={44} opacity={a} highlight />
+      <GlassCard label="Buyers pay" index="$?" x={780} y={1020 + (1 - b) * 50} width={440} height={700} indexSize={190} labelSize={44} opacity={b} />
     </AbsoluteFill>
   );
 };
@@ -119,12 +126,12 @@ export const S5: React.FC = () => {
       <Backdrop />
       <Head title="More than twice" from={25.65} to={28.4} color={COLORS.gold} />
       <Head title="In one run" sub="Median of 77 students" from={28.5} />
-      <PhotoPanel src={table2} aspect={1396 / 1689} left={60} top={560} width={960} height={330} t={T} opacity={tb} focus={{ x: 0.06, y: 0.345, w: 0.88, h: 0.17 }} zoomAt={[25.8, 26.4]} highlights={[
+      <PhotoPanel src={table2} aspect={1396 / 1689} left={60} top={BT} width={960} height={BH} t={T} opacity={tb} focus={{ x: 0.06, y: 0.3, w: 0.88, h: 0.3 }} zoomAt={[25.8, 26.4]} highlights={[
         { x: 0.5, y: 0.43, w: 0.1, h: 0.078, at: 26.6, dur: 0.6 },
         { x: 0.74, y: 0.43, w: 0.105, h: 0.078, at: 27.2, dur: 0.6 },
       ]} />
-      <GlassCard label="Owners asked" index="$7.12" x={300} y={920 + (1 - a) * 50} width={440} height={620} indexSize={120} labelSize={42} opacity={a} highlight />
-      <GlassCard label="Buyers offered" index="$2.87" x={780} y={920 + (1 - b) * 50} width={440} height={620} indexSize={120} labelSize={42} opacity={b} />
+      <GlassCard label="Owners asked" index="$7.12" x={300} y={1020 + (1 - a) * 50} width={440} height={700} indexSize={120} labelSize={42} opacity={a} highlight />
+      <GlassCard label="Buyers offered" index="$2.87" x={780} y={1020 + (1 - b) * 50} width={440} height={700} indexSize={120} labelSize={42} opacity={b} />
     </AbsoluteFill>
   );
 };
@@ -138,7 +145,7 @@ export const S6: React.FC = () => {
       <Head title="Same mug." from={34.6} to={35.6} />
       <Head title="Same room." from={35.65} to={36.8} />
       <Head title="Who held it." from={36.85} color={COLORS.gold} />
-      <Pic src={mugHand} aspect={736 / 966} h={900} top={400} t={T} opacity={ramp(T, 34.6, 35.1)} />
+      <Pic src={mugHand} aspect={736 / 966} t={T} opacity={ramp(T, 34.6, 35.1)} />
     </AbsoluteFill>
   );
 };
@@ -151,7 +158,7 @@ export const S7: React.FC = () => {
       <Backdrop />
       <Head title="It kills the trade" from={39.3} to={41.5} />
       <Head title="Half should trade" from={41.55} color={COLORS.gold} />
-      <PhotoPanel src={abstract} aspect={1391 / 1502} left={60} top={460} width={960} height={640} t={T} opacity={ramp(T, 39.5, 40.0)} focus={{ x: 0.1, y: 0.65, w: 0.8, h: 0.29 }} zoomAt={[39.6, 40.6]} highlights={[
+      <PhotoPanel src={abstract} aspect={1391 / 1502} left={60} top={BT} width={960} height={BH} t={T} opacity={ramp(T, 39.5, 40.0)} focus={{ x: 0.1, y: 0.72, w: 0.8, h: 0.28 }} zoomAt={[39.6, 40.6]} highlights={[
         { x: 0.15, y: 0.833, w: 0.7, h: 0.024, at: 41.7, dur: 0.8 },
         { x: 0.15, y: 0.856, w: 0.7, h: 0.024, at: 43.7, dur: 1.2 },
       ]} />
@@ -169,8 +176,8 @@ export const S8: React.FC = () => {
       <Backdrop />
       <Head title="Only a handful" sub="Cornell class, 44 students" from={46.1} to={49.8} />
       <Head title="One in five" sub="Experiment 1, mugs" from={49.9} color={COLORS.gold} />
-      <GlassCard label="Expected trades" index="11" x={300} y={900 + (1 - a) * 50} width={440} height={620} indexSize={220} labelSize={42} opacity={a} />
-      <GlassCard label="Actual trades" index="1 to 4" x={780} y={900 + (1 - b) * 50} width={440} height={620} indexSize={110} labelSize={42} opacity={b} highlight />
+      <GlassCard label="Expected trades" index="11" x={300} y={1020 + (1 - a) * 50} width={440} height={700} indexSize={220} labelSize={42} opacity={a} />
+      <GlassCard label="Actual trades" index="1 to 4" x={780} y={1020 + (1 - b) * 50} width={440} height={700} indexSize={110} labelSize={42} opacity={b} highlight />
     </AbsoluteFill>
   );
 };
@@ -184,8 +191,8 @@ export const S9: React.FC = () => {
       <Backdrop />
       <Head title="Not greed." from={51.2} to={53.1} />
       <Head title="Owning it changed the price." from={53.2} color={COLORS.gold} size={92} />
-      <Pic src={mug} aspect={736 / 920} h={760} top={560} t={T} opacity={ramp(T, 51.3, 51.8)} />
-      {T < 53.4 ? <Tag value="$3" left={660} top={1150} p={1} /> : <Tag value="$7" left={660} top={1150} p={s} />}
+      <Pic src={mug} aspect={736 / 920} h={700} t={T} opacity={ramp(T, 51.3, 51.8)} />
+      {T < 53.4 ? <Tag value="$3" left={640} top={1190} p={1} /> : <Tag value="$7" left={640} top={1190} p={s} />}
     </AbsoluteFill>
   );
 };
@@ -210,12 +217,12 @@ export const S10: React.FC = () => {
       <Head title="The endowment effect" from={55.3} to={58.2} size={96} />
       <Head title="Yours" from={58.4} to={60.0} color={COLORS.gold} size={120} />
       <Head title="Losses weigh more" from={60.1} size={96} />
-      <PhotoPanel src={abstract} aspect={1391 / 1502} left={60} top={520} width={960} height={380} t={T} opacity={pa} focus={{ x: 0.08, y: 0.05, w: 0.84, h: 0.16 }} zoomAt={[55.5, 56.4]} highlights={[{ x: 0.62, y: 0.07, w: 0.25, h: 0.035, at: 56.6, dur: 0.7 }]} />
-      <Pic src={mug} aspect={736 / 920} h={760} top={480} t={T} opacity={own} />
-      <GlassCard label="Loss" x={540 - 240 * mv} y={960 + (1 - loss) * 50} width={440} height={700} labelSize={52} opacity={loss} highlight>
+      <PhotoPanel src={abstract} aspect={1391 / 1502} left={60} top={BT} width={960} height={BH} t={T} opacity={pa} focus={{ x: 0.08, y: 0.08, w: 0.84, h: 0.3 }} zoomAt={[55.5, 56.4]} highlights={[{ x: 0.62, y: 0.07, w: 0.25, h: 0.035, at: 56.6, dur: 0.7 }]} />
+      <Pic src={mug} aspect={736 / 920} h={700} t={T} opacity={own} />
+      <GlassCard label="Loss" x={540 - 240 * mv} y={1020 + (1 - loss) * 50} width={440} height={700} labelSize={52} opacity={loss} highlight>
         <div style={{ display: "flex", justifyContent: "center" }}><Arrow down size={230} color={COLORS.gold} /></div>
       </GlassCard>
-      <GlassCard label="Gain" x={780} y={960} width={440} height={520} labelSize={44} opacity={gain}>
+      <GlassCard label="Gain" x={780} y={1020} width={440} height={520} labelSize={44} opacity={gain}>
         <div style={{ display: "flex", justifyContent: "center" }}><Arrow size={130} color={COLORS.cream} /></div>
       </GlassCard>
     </AbsoluteFill>
@@ -232,8 +239,8 @@ export const S11: React.FC = () => {
       <Backdrop />
       <Head title="Free trials" from={64.5} to={66.5} />
       <Head title="The jacket you never wear" from={66.7} color={COLORS.gold} size={92} />
-      <PhotoPanel src={trial} aspect={1470 / 980} left={60} top={560} width={960} height={640} t={T} opacity={a} highlights={[{ x: 0.22, y: 0.35, w: 0.53, h: 0.18, at: 65.3, dur: 0.7 }]} />
-      <Pic src={closetMessy} aspect={736 / 987} h={880} top={430} t={T} opacity={b} />
+      <PhotoPanel src={trial} aspect={1470 / 980} left={60} top={BC - 320} width={960} height={640} t={T} opacity={a} highlights={[{ x: 0.22, y: 0.35, w: 0.53, h: 0.18, at: 65.3, dur: 0.7 }]} />
+      <Pic src={closetMessy} aspect={736 / 987} t={T} opacity={b} />
     </AbsoluteFill>
   );
 };
@@ -241,13 +248,16 @@ export const S11: React.FC = () => {
 // 12. The question to ask
 export const S12: React.FC = () => {
   const T = useT();
+  const big = ramp(T, 69.5, 69.9) * ramp(T, 70.5, 70.8, 1, 0);
   return (
     <AbsoluteFill>
       <Backdrop />
-      <Head title="Ask yourself" from={69.5} to={70.7} />
+      <div style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0, display: "flex", alignItems: "center", justifyContent: "center", opacity: big, transform: `scale(${0.8 + 0.2 * ramp(T, 69.5, 70.1, 0, 1, POP)})` }}>
+        <Title text="Ask yourself" size={210} align="center" color={COLORS.gold} />
+      </div>
       <Head title="Would you buy it today?" sub="At the price you're asking" from={70.8} color={COLORS.gold} size={92} />
-      <Pic src={mug} aspect={736 / 920} h={760} top={560} t={T} opacity={ramp(T, 70.8, 71.3)} />
-      <Tag value="$?" left={660} top={1150} p={ramp(T, 71.4, 71.9, 0, 1, POP)} />
+      <Pic src={mug} aspect={736 / 920} h={700} t={T} opacity={ramp(T, 70.8, 71.3)} />
+      <Tag value="$?" left={640} top={1190} p={ramp(T, 71.4, 71.9, 0, 1, POP)} />
     </AbsoluteFill>
   );
 };

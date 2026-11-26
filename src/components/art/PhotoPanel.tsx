@@ -43,7 +43,7 @@ export const PhotoPanel: React.FC<{
         {highlights.map((h, i) => {
           const p = ramp(t, h.at, h.at + (h.dur ?? 0.7));
           return (
-            <div key={i} style={{ position: "absolute", left: h.x * baseW - 4, top: h.y * baseH - 2, width: (h.w * baseW + 8) * p, height: h.h * baseH + 4, background: "rgba(201,162,75,0.42)", borderBottom: `4px solid ${COLORS.gold}`, borderRadius: 4, mixBlendMode: "multiply" }} />
+            <div key={i} style={{ position: "absolute", left: h.x * baseW - 4, top: h.y * baseH - 2, width: (h.w * baseW + 8) * p, height: h.h * baseH + 4, background: "rgba(201,162,75,0.6)", borderBottom: `5px solid ${COLORS.gold}`, borderRadius: 4, mixBlendMode: "multiply" }} />
           );
         })}
       </div>

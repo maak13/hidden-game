@@ -14,7 +14,7 @@ export const Captions: React.FC<{ cues: CaptionCue[]; top?: number }> = ({ cues,
   const op = ramp(T, c.start - 0.05, c.start + 0.1) * ramp(T, c.end, c.end + 0.12, 1, 0);
   return (
     <div style={{ position: "absolute", left: 50, right: 50, top, display: "flex", justifyContent: "center", opacity: op, transform: `translateY(${(1 - op) * 10}px)` }}>
-      <div style={{ padding: "18px 34px", borderRadius: 36, background: "rgba(19,20,23,0.82)", border: "1.5px solid rgba(241,232,214,0.18)", fontFamily: sans, fontWeight: 700, fontSize: 56, lineHeight: 1.22, color: COLORS.cream, textAlign: "center", maxWidth: 980 }}>{c.text}</div>
+      <div style={{ padding: "18px 34px", borderRadius: 36, background: "rgba(19,20,23,0.82)", border: "1.5px solid rgba(241,232,214,0.18)", fontFamily: sans, fontWeight: 700, fontSize: 66, lineHeight: 1.2, whiteSpace: "nowrap", color: COLORS.cream, textAlign: "center", maxWidth: 1000 }}>{c.text}</div>
     </div>
   );
 };
